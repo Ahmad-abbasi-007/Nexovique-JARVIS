@@ -1,0 +1,61 @@
+{
+  "name": "nexovique-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "workspaces": [
+    "server"
+  ],
+  "main": "electron.cjs",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "electron": "wait-on http://localhost:5173 && electron .",
+    "start": "concurrently \"npm run dev\" \"npm run electron\"",
+    "dist": "vite build && electron-builder"
+  },
+  "build": {
+    "appId": "com.nexovique.jarvis",
+    "productName": "JARVIS AI",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "dist/**/*",
+      "electron.cjs",
+      "server/**/*",
+      "!server/.env"
+    ],
+    "win": {
+      "target": "nsis"
+    }
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-icons": "^5.7.0",
+    "react-router-dom": "^7.18.5",
+    "@google/genai": "^3.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "mongoose": "^9.12.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "concurrently": "^10.0.7",
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0",
+    "eslint": "^10.13.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "globals": "^17.13.0",
+    "vite": "^8.3.5",
+    "wait-on": "^9.5.1"
+  }
+}

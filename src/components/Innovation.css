@@ -1,0 +1,29 @@
+.innov-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+.innov-card {
+  background: linear-gradient(180deg, var(--bg-card) 0%, rgba(13, 21, 48, 0.4) 100%);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 36px 28px;
+  transition: all 0.4s ease;
+}
+.innov-card:hover {
+  border-color: rgba(0, 212, 255, 0.4);
+  transform: translateY(-4px);
+}
+.innov-icon {
+  font-size: 32px;
+  color: var(--accent-cyan);
+  margin-bottom: 18px;
+}
+.innov-card h3 {
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+.innov-card p {
+  color: var(--text-secondary);
+  font-size: 14px;
+}
