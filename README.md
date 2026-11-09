@@ -16,7 +16,7 @@ From this directory, install the frontend and backend dependencies:
 npm install
 ```
 
-Create `server\.env` from the example if it does not already exist, then set the required values:
+For development, create `server\.env` from the example if it does not already exist, then set the required values:
 
 ```dotenv
 MONGO_URI=mongodb://127.0.0.1:27017/jarvis
@@ -25,6 +25,7 @@ PORT=5000
 ```
 
 Keep `server\.env` private. It is excluded from Git and packaged application files.
+For an installed Windows app, place the same settings in `%APPDATA%\JARVIS AI\.env`.
 
 ## Run
 

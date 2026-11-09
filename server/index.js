@@ -7,7 +7,7 @@ const { GoogleGenAI } = require('@google/genai');
 const { exec } = require('child_process');
 const path = require('path');
 
-dotenv.config({ path: path.join(__dirname, '.env') });
+dotenv.config({ path: process.env.JARVIS_ENV_PATH || path.join(__dirname, '.env') });
 
 const app = express();
 app.use(cors());

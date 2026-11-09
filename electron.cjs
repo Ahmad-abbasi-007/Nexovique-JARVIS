@@ -7,7 +7,13 @@ let backendProcess;
 
 function startBackend() {
   const serverPath = path.join(__dirname, 'server', 'index.js');
-  backendProcess = fork(serverPath);
+  const envPath = app.isPackaged
+    ? path.join(app.getPath('userData'), '.env')
+    : path.join(__dirname, 'server', '.env');
+
+  backendProcess = fork(serverPath, [], {
+    env: { ...process.env, JARVIS_ENV_PATH: envPath },
+  });
 
   backendProcess.on('error', (err) => {
     console.error('Backend error:', err);
